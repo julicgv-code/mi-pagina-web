@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>IA</title>
+<style>
+body{font-family:Arial;margin:0;background:#f4f4f4}
+header{background:#fff;padding:15px;text-align:center}
+nav a{margin:10px;text-decoration:none;color:#333;font-weight:bold}
+section{max-width:900px;margin:auto;padding:30px}
+img{width:100%;max-height:300px;object-fit:cover;margin:15px 0;border-radius:10px}
+.chat{position:fixed;bottom:15px;right:15px;background:#fff;padding:10px;border-radius:10px;width:250px}
+/* ANIMACIÓN MENÚ */
+nav a{
+  margin:10px;
+  text-decoration:none;
+  color:#333;
+  font-weight:bold;
+  position:relative;
+  transition: all 0.3s ease;
+}
+
+nav a:hover{
+  color:#2563eb;
+  transform:scale(1.1);
+}
+
+nav a::after{
+  content:"";
+  position:absolute;
+  width:0%;
+  height:2px;
+  left:0;
+  bottom:-5px;
+  background:#2563eb;
+  transition:0.3s;
+}
+
+nav a:hover::after{
+  width:100%;
+}
+</style>
+</head>
+<body>
+
+<header>
+<h1>Inteligencia Artificial</h1>
+<nav>
+<a href="index.html">Inicio</a>
+<a href="redes.html">Redes</a>
+<a href="inversiones.html">Inversiones</a>
+<a href="youtube.html">YouTube</a>
+</nav>
+</header>
+
+<section>
+
+<h2>¿Qué es la IA?</h2>
+<p>La inteligencia artificial es una tecnología que permite a los sistemas realizar tareas que normalmente requieren inteligencia humana, como aprender, analizar información y tomar decisiones. Se basa en algoritmos y modelos matemáticos que procesan grandes cantidades de datos.</p>
+
+<h2>Aplicaciones reales</h2>
+<p>Hoy en día, la IA se utiliza en múltiples áreas. En redes sociales, por ejemplo, analiza el comportamiento de los usuarios para mostrar contenido personalizado. En la industria, automatiza procesos. En la educación, ayuda a generar contenido y apoyar el aprendizaje.</p>
+
+<img src="https://images.unsplash.com/photo-1677442136019-21780ecad995">
+
+<h2>Ventajas y desventajas</h2>
+<p>Entre sus ventajas se encuentran la rapidez en el análisis de datos y la automatización de tareas repetitivas. Sin embargo, también presenta desventajas como la dependencia tecnológica y posibles errores si los datos no son correctos.</p>
+
+<img src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=800&q=60">
+
+<h2>Ejemplo práctico</h2>
+<p>Un ejemplo real es el uso de IA para generar ideas de contenido en redes sociales. Un creador puede usar una herramienta para obtener ideas, organizar contenido y mejorar su estrategia.</p>
+
+<h3>Paso a paso</h3>
+<ol>
+<li>Elegir herramienta de IA</li>
+<li>Definir objetivo</li>
+<li>Generar contenido</li>
+<li>Revisar resultados</li>
+<li>Optimizar</li>
+</ol>
+
+</section>
+
+<div class="chat">
+<input id="q"><button onclick="r()">OK</button>
+<p id="a"></p>
+</div>
+
+<script>
+function r(){document.getElementById("a").innerText="La IA analiza datos y automatiza tareas";}
+</script>
+
+</body>
+</html>

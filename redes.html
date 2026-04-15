@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Redes Sociales</title>
+<style>
+body{font-family:Arial;margin:0;background:#f4f4f4;color:#222}
+header{background:#fff;padding:15px;text-align:center;border-bottom:1px solid #ccc}
+nav a{margin:10px;text-decoration:none;color:#333;font-weight:bold}
+section{max-width:900px;margin:auto;padding:30px}
+img{width:100%;max-height:300px;object-fit:cover;border-radius:10px;margin:15px 0}
+.chat{position:fixed;bottom:15px;right:15px;background:#fff;padding:10px;border-radius:10px;width:250px;box-shadow:0 0 10px rgba(0,0,0,0.2)}
+input{width:100%;margin-top:5px}
+button{width:100%;margin-top:5px}
+/* ANIMACIÓN MENÚ */
+nav a{
+  margin:10px;
+  text-decoration:none;
+  color:#333;
+  font-weight:bold;
+  position:relative;
+  transition: all 0.3s ease;
+}
+
+nav a:hover{
+  color:#2563eb;
+  transform:scale(1.1);
+}
+
+nav a::after{
+  content:"";
+  position:absolute;
+  width:0%;
+  height:2px;
+  left:0;
+  bottom:-5px;
+  background:#2563eb;
+  transition:0.3s;
+}
+
+nav a:hover::after{
+  width:100%;
+}
+</style>
+</head>
+<body>
+
+<header>
+<h1>Redes Sociales</h1>
+<nav>
+<a href="index.html">Inicio</a>
+<a href="ia.html">IA</a>
+<a href="inversiones.html">Inversiones</a>
+<a href="youtube.html">YouTube</a>
+</nav>
+</header>
+
+<section>
+
+<h2>¿Qué son las redes sociales?</h2>
+<p>Las redes sociales son plataformas digitales que permiten a las personas compartir contenido, comunicarse y crear comunidades. Hoy en día son una herramienta fundamental para la difusión de información y el desarrollo de marcas personales o empresariales.</p>
+
+<p>Estas plataformas funcionan mediante algoritmos que analizan el comportamiento de los usuarios, como los videos que ven, los “me gusta” que dan y el tiempo que pasan en cada contenido. Con base en esto, muestran contenido personalizado.</p>
+
+<img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d">
+
+<h2>Importancia en la actualidad</h2>
+<p>Las redes sociales no solo sirven para entretenimiento, sino también para educación, marketing y generación de oportunidades. Muchas personas utilizan estas plataformas para compartir conocimientos, promocionar productos o crear contenido educativo.</p>
+
+<p>Sin embargo, es importante entender que el crecimiento no es automático. Requiere constancia, disciplina y una estrategia clara.</p>
+
+<img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f">
+
+<h2>Cómo funcionan los algoritmos</h2>
+<p>Los algoritmos priorizan el contenido que genera interacción. Esto incluye comentarios, tiempo de visualización y compartidos. Por eso, el contenido debe ser interesante y mantener la atención del usuario.</p>
+
+<p>Un ejemplo claro es el formato de video corto, que actualmente tiene mayor alcance debido a su facilidad de consumo.</p>
+
+<h2>Errores comunes</h2>
+<p>Uno de los errores más comunes es pensar que los resultados son inmediatos. Muchas personas abandonan antes de tiempo al no ver crecimiento rápido.</p>
+
+<p>Otro error es no analizar métricas. Sin revisar resultados, es difícil mejorar el contenido.</p>
+
+<img src="https://images.unsplash.com/photo-1492724441997-5dc865305da7">
+
+<h2>Ejemplo práctico</h2>
+<p>Un creador de contenido puede publicar videos diariamente durante varias semanas. Al analizar cuáles tienen más interacción, puede ajustar su estrategia y mejorar sus resultados.</p>
+
+<h3>Paso a paso</h3>
+<ol>
+<li>Elegir un tema o nicho</li>
+<li>Crear una cuenta en una red social</li>
+<li>Publicar contenido constantemente</li>
+<li>Analizar métricas</li>
+<li>Mejorar el contenido según resultados</li>
+</ol>
+
+</section>
+
+<div class="chat">
+<b>Asistente</b>
+<input id="q">
+<button onclick="responder()">Enviar</button>
+<p id="r"></p>
+</div>
+
+<script>
+function responder(){
+let t=document.getElementById("q").value.toLowerCase();
+let r="";
+if(t.includes("crecer")) r="El crecimiento requiere constancia y análisis.";
+else if(t.includes("algoritmo")) r="El algoritmo prioriza la interacción.";
+else r="Pregunta sobre redes sociales.";
+document.getElementById("r").innerText=r;
+}
+</script>
+
+</body>
+</html>

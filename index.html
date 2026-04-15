@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Inicio</title>
+<style>
+body{font-family:Arial;margin:0;background:#f4f4f4;color:#222}
+header{background:#fff;padding:15px;text-align:center;border-bottom:1px solid #ccc}
+nav a{margin:10px;text-decoration:none;color:#333;font-weight:bold}
+section{max-width:900px;margin:auto;padding:30px}
+img{width:100%;max-height:300px;object-fit:cover;border-radius:10px;margin:15px 0}
+.chat{position:fixed;bottom:15px;right:15px;background:#fff;padding:10px;border-radius:10px;width:250px;box-shadow:0 0 10px rgba(0,0,0,0.2)}
+input{width:100%;margin-top:5px}
+button{width:100%;margin-top:5px}
+/* ANIMACIÓN MENÚ */
+nav a{
+  margin:10px;
+  text-decoration:none;
+  color:#333;
+  font-weight:bold;
+  position:relative;
+  transition: all 0.3s ease;
+}
+
+nav a:hover{
+  color:#2563eb;
+  transform:scale(1.1);
+}
+
+nav a::after{
+  content:"";
+  position:absolute;
+  width:0%;
+  height:2px;
+  left:0;
+  bottom:-5px;
+  background:#2563eb;
+  transition:0.3s;
+}
+
+nav a:hover::after{
+  width:100%;
+}
+</style>
+</head>
+<body>
+
+<header>
+<h1>IA, Redes Sociales e Inversiones</h1>
+<nav>
+<a href="index.html">Inicio</a>
+<a href="ia.html">IA</a>
+<a href="redes.html">Redes</a>
+<a href="inversiones.html">Inversiones</a>
+<a href="youtube.html">YouTube</a>
+</nav>
+</header>
+
+<section>
+<h2>Introducción</h2>
+
+<p>En el mundo actual, la tecnología ha transformado la forma en que las personas trabajan, aprenden y generan oportunidades. Tres áreas destacan especialmente: la inteligencia artificial, las redes sociales y las inversiones. Estas herramientas no solo están presentes en la vida cotidiana, sino que también representan oportunidades reales cuando se utilizan correctamente.</p>
+
+<p>La inteligencia artificial permite automatizar procesos, analizar grandes cantidades de información y mejorar la toma de decisiones. No es una herramienta mágica, sino un apoyo que requiere conocimiento para ser utilizada correctamente.</p>
+
+<img src="https://images.unsplash.com/photo-1518770660439-4636190af475">
+
+<p>Las redes sociales, por otro lado, se han convertido en uno de los principales medios de comunicación. Permiten compartir contenido, crear comunidades y difundir información a gran escala. Sin embargo, crecer en estas plataformas requiere disciplina, estrategia y análisis constante.</p>
+
+<img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d">
+
+<p>Las inversiones representan una forma de hacer crecer el dinero a largo plazo. Existen diferentes tipos de inversión, cada uno con riesgos y beneficios. Es importante comprender que no existen ganancias seguras y que siempre es necesario informarse antes de tomar decisiones.</p>
+
+<img src="https://images.unsplash.com/photo-1559526324-593bc073d938">
+
+<p>Este sitio web tiene un enfoque educativo. Su objetivo es explicar estos temas de manera clara y realista, evitando promesas irreales y mostrando cómo funcionan en la práctica.</p>
+
+</section>
+
+<div class="chat">
+<b>Asistente</b>
+<input id="q">
+<button onclick="responder()">Enviar</button>
+<p id="r"></p>
+</div>
+
+<script>
+function responder(){
+let t=document.getElementById("q").value.toLowerCase();
+let r="";
+if(t.includes("ia")) r="La IA automatiza tareas y analiza datos.";
+else if(t.includes("redes")) r="Las redes requieren constancia y estrategia.";
+else if(t.includes("inversion")) r="Invertir implica riesgo y planificación.";
+else r="Pregunta sobre IA, redes o inversiones.";
+document.getElementById("r").innerText=r;
+}
+</script>
+
+</body>
+</html>
+
