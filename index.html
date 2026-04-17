@@ -78,16 +78,49 @@ nav a:hover::after{
 </section>
 
 <div class="chat">
-<b>Asistente</b>
-<input id="q">
+<b>Asistente IA 🤖</b>
+<input id="q" placeholder="Escribe tu pregunta...">
 <button onclick="responder()">Enviar</button>
 <p id="r"></p>
 </div>
 
 <script>
 function responder(){
-let t=document.getElementById("q").value.toLowerCase();
-let r="";
+
+if(t.includes("hola") || t.includes("buenas")){
+  r="Hola 👋, puedo ayudarte con IA, redes sociales, inversiones o YouTube.";
+}
+
+else if(t.includes("ia")){
+  r="La inteligencia artificial permite automatizar tareas como generar contenido, analizar datos y mejorar procesos.";
+}
+
+else if(t.includes("redes")){
+  r="Las redes sociales funcionan con algoritmos que priorizan la interacción. Es importante publicar constantemente y analizar resultados.";
+}
+
+else if(t.includes("youtube")){
+  r="Un canal automatizado usa IA para crear guiones, voz y edición sin necesidad de aparecer en cámara.";
+}
+
+else if(t.includes("ganar") || t.includes("dinero")){
+  r="Las ganancias en plataformas digitales dependen de la constancia, las visualizaciones y la calidad del contenido.";
+}
+
+else if(t.includes("invertir") || t.includes("inversion")){
+  r="Invertir implica riesgo. Es importante aprender, diversificar y pensar a largo plazo.";
+}
+
+else if(t.includes("como empezar")){
+  r="Puedes empezar eligiendo un tema, creando contenido con ayuda de IA y publicando de forma constante.";
+}
+
+else{
+  r="No entendí bien tu pregunta 🤔. Puedes preguntarme sobre IA, redes, inversiones o YouTube.";
+}
+
+document.getElementById("r").innerText = r;
+}
 if(t.includes("ia")) r="La IA automatiza tareas y analiza datos.";
 else if(t.includes("redes")) r="Las redes requieren constancia y estrategia.";
 else if(t.includes("inversion")) r="Invertir implica riesgo y planificación.";
