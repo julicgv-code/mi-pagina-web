@@ -83,12 +83,75 @@ nav a:hover::after{
 </section>
 
 <div class="chat">
-<input id="q"><button onclick="r()">OK</button>
-<p id="a"></p>
-</div>
+  <b>Asistente IA 🤖</b>
+  <div id="chatbox" style="height:150px; overflow-y:auto; margin:10px 0; font-size:14px;"></div>
+  <input id="q" placeholder="Escribe tu pregunta...">
+  <button onclick="responder()">Enviar</button>
+</div> 
 
 <script>
-function r(){document.getElementById("a").innerText="La IA analiza datos y automatiza tareas";}
+let chatbox = document.getElementById("chatbox");
+
+function agregarMensaje(texto, tipo){
+  let p = document.createElement("p");
+  p.style.margin="5px 0";
+
+  if(tipo === "user"){
+    p.style.textAlign="right";
+    p.innerHTML = "<b>Tú:</b> " + texto;
+  } else {
+    p.style.textAlign="left";
+    p.innerHTML = "<b>IA:</b> " + texto;
+  }
+
+  chatbox.appendChild(p);
+  chatbox.scrollTop = chatbox.scrollHeight;
+}
+
+function responder(){
+  let input = document.getElementById("q");
+  let t = input.value.toLowerCase();
+
+  if(t.trim() === "") return;
+
+  agregarMensaje(input.value, "user");
+
+  let r = "";
+
+  if(t.includes("hola")){
+    r="Hola 👋, soy tu asistente de inteligencia artificial. Puedo ayudarte con temas de IA, redes sociales, inversiones y YouTube automatizado.";
+  }
+
+  else if(t.includes("ia")){
+    r="La inteligencia artificial es una tecnología que permite a las máquinas aprender y tomar decisiones basadas en datos. En este proyecto se usa para automatizar la creación de contenido.";
+  }
+
+  else if(t.includes("youtube")){
+    r="Un canal automatizado en YouTube funciona utilizando herramientas de IA para generar guiones, voz y edición. Esto permite crear contenido sin necesidad de aparecer en cámara.";
+  }
+
+  else if(t.includes("dinero") || t.includes("ganar")){
+    r="Las ganancias en plataformas digitales no son inmediatas. Dependen de la constancia, la calidad del contenido y el número de visualizaciones.";
+  }
+
+  else if(t.includes("redes")){
+    r="Las redes sociales funcionan con algoritmos que muestran contenido según la interacción del usuario. Publicar contenido constante y de valor es clave para crecer.";
+  }
+
+  else if(t.includes("invertir")){
+    r="Invertir consiste en utilizar dinero con el objetivo de generar ganancias a largo plazo. Es importante entender los riesgos y diversificar.";
+  }
+
+  else{
+    r="Esa es una buena pregunta 🤔. En este proyecto estamos trabajando con inteligencia artificial aplicada a contenido digital. Puedes preguntarme sobre IA, redes, inversiones o YouTube.";
+  }
+
+  setTimeout(()=>{
+    agregarMensaje(r, "ia");
+  }, 500);
+
+  input.value="";
+}
 </script>
 
 </body>
